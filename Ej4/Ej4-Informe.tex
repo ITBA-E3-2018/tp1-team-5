@@ -13,6 +13,7 @@
 	\pagenumbering{arabic}
 	Comentarios:
 	\newline -Falta agregar tildes
+	\newline -Falta implementar circuito en verilog
 	\section{Ejercicio 4}
 	\subsection{Introduccion}
 		\hspace{10mm} Para implementar un circuito que convierta un numero binario de 4 bits en su complemento a dos se empezo pensando este circuito como una caja negra con 4 entradas y 4 salidas:
@@ -48,11 +49,13 @@
 			\end{center}
 		\end{table}
 		\newline Facilmente de la tabla se puede observar que h resulta ser la entrada negada. Por lo que resulta la primera relacion de entrada-salida:
-		\newline \centerline{$h(d)=\overline{\overline{d}}$}
+		\begin{equation}
+			\centerline{$h(d)=\overline{\overline{d}}$}
+		\end{equation}
 		\newline Para la salida correspondiente a el bit g la tabla de verdad es de la siguiente manera:
 		\begin{table}[h!]
 			\begin{center}
-				\caption{Tabla para bit h}
+				\caption{Tabla para bit g}
 				\begin{tabular}{l|c|r}
 				\textbf{$\overline{c}$} & \textbf{$\overline{d}$} & \textbf{g}\\
 				\hline
@@ -65,5 +68,67 @@
 		\end{table}	
 		\newline Al escribir la salida en funcion de los minterminos se llega a la siguiente expresion:
 		\newline \centerline{$g(c,d)=m_{1}+m_{2}$}
-		\newline \centerline{$g(c,d)=\overline{\overline{c}}\overline{d}+\overline{c}\overline{\overline{d}}$}
+		\begin{equation}
+			\centerline{$g(c,d)=\overline{\overline{c}}\overline{d}+\overline{c}\overline{\overline{d}}$}
+		\end{equation}
+		\newline Ahora para el bit f se requiere una tabla de verdad de tres variables ya que ahora depende del carry causado por las variables de entrada c y d:
+		\begin{table}[h!]
+			\begin{center}
+				\caption{Tabla para bit f}
+				\begin{tabular}{l|c|c|r}
+				\textbf{$\overline{b}$} & \textbf{$\overline{c}$} & \textbf{$\overline{d}$} & \textbf{f}\\
+				\hline
+				0 & 0 & 0 & 0\\
+				0 & 0 & 1 & 0\\	
+				0 & 1 & 0 & 0\\
+				0 & 1 & 1 & 1($m_{3}$)\\
+				1 & 0 & 0 & 1($m_{4}$)\\
+				1 & 0 & 1 & 1($m_{5}$)\\	
+				1 & 1 & 0 & 1($m_{6}$)\\
+				1 & 1 & 1 & 0\\				
+				\end{tabular}
+			\end{center}
+		\end{table}
+		\newline Al escribir la salida en funcion de los minterminos se llega a la siguiente expresion:
+		\newline \centerline{$f(b,c,d)=m_{3}+m_{4}+m_{5}+m_{6}$}
+		\begin{equation}
+			\centerline{$f(b,c,d)=\overline{\overline{b}}\overline{c}\overline{d}+\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{b}\overline{\overline{c}}\overline{d}+\overline{b}\overline{c}\overline{\overline{d}}$}
+		\end{equation}
+		\newline Para el bit e la tabla de verdad es la siguiente:
+			\begin{table}[h!]
+			\begin{center}
+				\caption{Tabla para bit e}
+				\begin{tabular}{l|c|c|c|r}
+				\textbf{$\overline{a}$} & \textbf{$\overline{b}$} & \textbf{$\overline{c}$} & \textbf{$\overline{d}$} & \textbf{e}\\
+				\hline
+				0 & 0 & 0 & 0 & 0\\
+				0 & 0 & 0 & 1 & 0\\	
+				0 & 0 & 1 & 0 & 0\\
+				0 & 0 & 1 & 1 & 0\\
+				0 & 1 & 0 & 0 & 0\\
+				0 & 1 & 0 & 1 & 0\\	
+				0 & 1 & 1 & 0 & 1($m_{6}$)\\
+				0 & 1 & 1 & 1 & 1($m_{7}$)\\		
+				1 & 0 & 0 & 0 & 1($m_{8}$)\\
+				1 & 0 & 0 & 1 & 1($m_{9}$)\\	
+				1 & 0 & 1 & 0 & 1($m_{10}$)\\
+				1 & 0 & 1 & 1 & 1($m_{11}$)\\
+				1 & 1 & 0 & 0 & 1($m_{12}$)\\
+				1 & 1 & 0 & 1 & 1($m_{13}$)\\	
+				1 & 1 & 1 & 0 & 1($m_{14}$)\\
+				1 & 1 & 1 & 1 & 0\\			
+				\end{tabular}
+			\end{center}
+		\end{table}
+		\newline Al escribir la salida en funcion de los minterminos se llega a la siguiente expresion:
+		\newline \centerline{$e(a,b,c,d)=m_{6}+m_{7}+m_{8}+m_{9}+m_{10}+m_{11}+m_{12}+m_{13}+m_{14}$}
+		\begin{equation}
+			\centerline{$e(a,b,c,d)=\overline{\overline{a}}\overline{b}\overline{c}\overline{d}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{d}+\overline{a}\overline{\overline{b}}\overline{c}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{c}\overline{d}+\overline{a}\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{b}\overline{\overline{c}}\overline{d}+\overline{a}\overline{b}\overline{c}\overline{\overline{d}}$}
+		\end{equation}
+	\subsection{Simplifiacion de las ecuaciones resultantes}
+		\hspace{10mm} Para reducir las 4 expresiones resultantes procedemos a utilizar la propiedad:
+		\newline \centerline{$\overline{\overline{a}}=a$}
+		Lo cual da como resultado las 4 siguientes ecuaciones:
+	\subsection{Circuito Resultante}
+		
 \end{document}
