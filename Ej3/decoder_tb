@@ -1,0 +1,57 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xcca730 .scope module, "decoder_tb" "decoder_tb" 2 3;
+ .timescale 0 0;
+v0xd11a80_0 .var "inp1", 0 0;
+v0xd11b20_0 .var "inp2", 0 0;
+v0xd11bd0_0 .net "out1", 0 0, L_0xd11fc0; 1 drivers
+v0xd11c80_0 .net "out2", 0 0, L_0xd12120; 1 drivers
+v0xd11d60_0 .net "out3", 0 0, L_0xd12310; 1 drivers
+v0xd11e10_0 .net "out4", 0 0, L_0xd12490; 1 drivers
+S_0xcca820 .scope module, "dec1" "decoder" 2 36, 3 1, S_0xcca730;
+ .timescale 0 0;
+L_0xd11e90 .functor OR 1, v0xd11a80_0, v0xd11b20_0, C4<0>, C4<0>;
+L_0xd11fc0 .functor NOT 1, L_0xd11e90, C4<0>, C4<0>, C4<0>;
+L_0xd120c0 .functor NOT 1, v0xd11b20_0, C4<0>, C4<0>, C4<0>;
+L_0xd12120 .functor AND 1, L_0xd120c0, v0xd11a80_0, C4<1>, C4<1>;
+L_0xd12220 .functor NOT 1, v0xd11a80_0, C4<0>, C4<0>, C4<0>;
+L_0xd12310 .functor AND 1, L_0xd12220, v0xd11b20_0, C4<1>, C4<1>;
+L_0xd12490 .functor AND 1, v0xd11a80_0, v0xd11b20_0, C4<1>, C4<1>;
+v0xd00af0_0 .net "a", 0 0, L_0xd11e90; 1 drivers
+v0xd114e0_0 .net "b", 0 0, L_0xd120c0; 1 drivers
+v0xd11580_0 .net "c", 0 0, L_0xd12220; 1 drivers
+v0xd11620_0 .net "inp1", 0 0, v0xd11a80_0; 1 drivers
+v0xd116d0_0 .net "inp2", 0 0, v0xd11b20_0; 1 drivers
+v0xd11770_0 .alias "out1", 0 0, v0xd11bd0_0;
+v0xd11850_0 .alias "out2", 0 0, v0xd11c80_0;
+v0xd118f0_0 .alias "out3", 0 0, v0xd11d60_0;
+v0xd119e0_0 .alias "out4", 0 0, v0xd11e10_0;
+    .scope S_0xcca730;
+T_0 ;
+    %vpi_call 2 12 "$display", "input1\011 input2\011 out1 out2 out3 out4";
+    %vpi_call 2 13 "$monitor", "%b\011 %b\011 %b %b %b %b", v0xd11a80_0, v0xd11b20_0, v0xd11bd0_0, v0xd11c80_0, v0xd11d60_0, v0xd11e10_0;
+    %set/v v0xd11a80_0, 0, 1;
+    %set/v v0xd11b20_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0xd11a80_0, 1, 1;
+    %set/v v0xd11b20_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0xd11a80_0, 0, 1;
+    %set/v v0xd11b20_0, 1, 1;
+    %delay 10, 0;
+    %set/v v0xd11a80_0, 1, 1;
+    %set/v v0xd11b20_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 31 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "decoder_tb.v";
+    "./decoder.v";

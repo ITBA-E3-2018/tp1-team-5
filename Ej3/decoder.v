@@ -1,7 +1,18 @@
 module decoder(inp1, inp2, out1, out2, out3, out4);
+	//input ports
+	input inp1;
+	input inp2;
 
-	input inp1, inp2;
-	output out1, out2, out3, out4;
+	//output ports
+	output out1;
+	output out2;
+	output out3;
+	output out4;
+
+	wire a;
+	wire b;
+	wire c;
+
 
 	//Out1 es 1, solo si ambos inputs son 0
 	or(a, inp1, inp2);
