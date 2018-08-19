@@ -1,15 +1,3 @@
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=20mm,
- }
- 
-\begin{document}
 	\pagenumbering{arabic}
 	Comentarios:
 	\newline -Falta agregar tildes
@@ -18,12 +6,12 @@
 	\subsection{Introduccion}
 		\hspace{10mm} Para implementar un circuito que convierta un numero binario de 4 bits en su complemento a dos se empezo pensando este circuito como una caja negra con 4 entradas y 4 salidas:
 		\begin{figure}[h!]
-			\includegraphics[width=\linewidth,scale=0.5]{comp2.png}
+			\includegraphics[width=\linewidth,scale=0.5]{ejercicios/Ej4/comp2.png}
   			\caption{Caja Negra Complemento a 2}
 		\end{figure}
 		\newline \hspace{10mm} A su vez, sabemos que el complemento a dos se realiza aplicando el complemento a uno y luego sumando uno al resultado. Por lo que se puede representar mediante el siguiente conjunto de "cajas negras":
 		\begin{figure}[h!]
-			\includegraphics[width=\linewidth,scale=0.5]{comp1+1.png}
+			\includegraphics[width=\linewidth,scale=0.5]{ejercicios/Ej4/comp1+1.png}
   			\caption{Caja Negra Complemento a 2}
 		\end{figure}
 		\newline \hspace{10mm} La salida tras el complemento a uno sabemos que es cada bit negado, es decir que atraviesan una compuerta NOT. De esta manera a la salida de el complemento a uno que se obtiene es: 
@@ -125,10 +113,9 @@
 		\begin{equation}
 			\centerline{$e(a,b,c,d)=\overline{\overline{a}}\overline{b}\overline{c}\overline{d}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{d}+\overline{a}\overline{\overline{b}}\overline{c}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{c}\overline{d}+\overline{a}\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{b}\overline{\overline{c}}\overline{d}+\overline{a}\overline{b}\overline{c}\overline{\overline{d}}$}
 		\end{equation}
-	\subsection{Simplifiacion de las ecuaciones resultantes}
+	\subsection{Simplificacion de las ecuaciones resultantes}
 		\hspace{10mm} Para reducir las 4 expresiones resultantes procedemos a utilizar la propiedad:
 		\newline \centerline{$\overline{\overline{a}}=a$}
 		Lo cual da como resultado las 4 siguientes ecuaciones:
 	\subsection{Circuito Resultante}
 		
-\end{document}
