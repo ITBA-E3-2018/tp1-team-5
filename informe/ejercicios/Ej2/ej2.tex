@@ -6,7 +6,7 @@ Se tiene una función dada por:
 \[
 	f(d,c,b,a)=\prod\left(M_{0},M_{1},M_{5},M_{7},M_{8},M_{10},M_{14},M_{15}\right)
 \]
-
+\vspace{5mm}
 A partir de esto se construyó la siguiente tabla de verdad, completando únicamente los máxterminos de aquellos estados en los que la función valía 0, ya que éstos son los que nos serán de utilidad:
 
 \begin{table}[h!]
@@ -43,6 +43,7 @@ De esta manera, la función está dada por productos de sumas de las variables (
 \subsection{Simplificación aplicando álgebra booleana}
 
 Se tiene entonces:
+\vspace{5mm}
 \begin{dmath}
     f(d,c,b,a)=M_{0}*M_{1}*M_{5}*M_{7}*M_{8}*M_{10}*M_{14}*M_{15}
 \end{dmath}
@@ -52,14 +53,14 @@ Que es equivalente a:
     {(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{3}+X_{4})}*{(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4})}*
     {(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}
 \end{dmath}
-
+\vspace{5mm}
 Utilizando la propiedad del álgebra booleana \((x+y)(x+\overline{y}=x)\) sobre los pares de términos \((M_{0},M_{1}); (M_{5},M_{7}); \)\linebreak
 \((M_{8},M_{10}); (M_{14},M_{15})\)  se llegó a la siguiente expresión simplificada.
-
+\vspace{5mm}
 \begin{dmath}
     f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}})}*{(X_{1}+\overline{X_{2}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{4})}
 \end{dmath}
-
+\vspace{5mm}
 \subsection{Simplificación aplicando mapas de Karnaugh}
 \subsection{Circuito lógico resultante}
 \subsubsection{Utilizando compuertas AND, OR, NOT.}
