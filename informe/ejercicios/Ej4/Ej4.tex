@@ -1,16 +1,27 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+ 
+\begin{document}	
 	Comentarios:
-	\newline -Falta agregar tildes
-	\newline -Falta implementar circuito en verilog
+	\newline -Falta Revision ortografica
 	\section{Ejercicio 4}
 	\subsection{Introduccion}
 		\hspace{10mm} Para implementar un circuito que convierta un numero binario de 4 bits en su complemento a dos se empezo pensando este circuito como una caja negra con 4 entradas y 4 salidas:
 		\begin{figure}[h!]
-			\includegraphics[width=\linewidth,scale=0.5]{ejercicios/Ej4/comp2.png}
+			\includegraphics[width=\linewidth,scale=0.5]{comp2.png}
   			\caption{Caja Negra Complemento a 2}
 		\end{figure}
 		\newline \hspace{10mm} A su vez, sabemos que el complemento a dos se realiza aplicando el complemento a uno y luego sumando uno al resultado. Por lo que se puede representar mediante el siguiente conjunto de "cajas negras":
 		\begin{figure}[h!]
-			\includegraphics[width=\linewidth,scale=0.5]{ejercicios/Ej4/comp1+1.png}
+			\includegraphics[width=\linewidth,scale=0.5]{comp1+1.png}
   			\caption{Caja Negra Complemento a 2}
 		\end{figure}
 		\newline \hspace{10mm} La salida tras el complemento a uno sabemos que es cada bit negado, es decir que atraviesan una compuerta NOT. De esta manera a la salida de el complemento a uno que se obtiene es: 
@@ -116,5 +127,29 @@
 		\hspace{10mm} Para reducir las 4 expresiones resultantes procedemos a utilizar la propiedad:
 		\newline \centerline{$\overline{\overline{a}}=a$}
 		Lo cual da como resultado las 4 siguientes ecuaciones:
+			\begin{align*}
+				h & = d\\
+				g & = c\overline{d}+\overline{c}d\\
+				f & = b\overline{c}\overline{d}+\overline{b}cd+\overline{b}c\overline{d}+\overline{b}\overline{c}d\\
+				e & = a\overline{b}\overline{c}\overline{d}+\overline{a}bcd+\overline{a}bc\overline{d}+\overline{a}b\overline{c}d+\overline{a}b\overline{c}\overline{d}+\overline{a}\overline{b}cd+\overline{a}\overline{b}c\overline{d}+\overline{a}\overline{b}\overline{c}d
+			\end{align*}
+			De estas cuatro expresiones las primeras no son posibles de reducir mas. Pero la tercera y cuarta son posibles de reducir con el uso de las siguientes propeidades:
+			\begin{align*}
+				a+a & = a\\
+				a+\overline{a} & = 1\\
+				ab+cb & = b(a+c)
+			\end{align*} 
+			La primera propiedad significa que puedo sumar uno de los minterminos a la expresion que esta no se vera afectada si ese mintermino ya pertenecia a la expresion. Con la segunda expresion puedo sacar 'factor comun' los terminos que difieran en una variable y su complemento de manera que al hacer el factor comun quede de la forma $f(a,b,...)(z+\overline{z})$ y asi utilizar la tercera propiedad que simplifica esa expresion a $f(a,b,...)$. De esta manera las ecuaciones se simplifican a su froma final que es de la siguiente manera:
+			\begin{align*}
+				h & = d\\
+				g & = c\overline{d}+\overline{c}d\\
+				f & = b\overline{c}\overline{d}+\overline{b}c+\overline{b}d\\
+				e & = a\overline{b}\overline{c}\overline{d}+\overline{a}\overline{c}d+\overline{a}\overline{b}c+\overline{a}b
+			\end{align*}
 	\subsection{Circuito Resultante}
-		
+	Al implementar las expresiones halladas en la seccion anterior con compuertas AND, OR y NOT se llega al siguiente circuito: 
+	\begin{figure}[h!]
+			\includegraphics[width=\linewidth,scale=0.5]{circuitoEj4.png}
+  			\caption{Circuito de conversion a complemento a dos}
+		\end{figure}
+\end{document}
