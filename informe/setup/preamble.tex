@@ -1,17 +1,28 @@
 %%% Preamble
-\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\documentclass{article}
 \usepackage[T1]{fontenc}
 \usepackage{fourier}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}					% English language/hyphenation
+\usepackage[spanish]{babel}					% English language/hyphenation
+
+\usepackage[thinlines]{easytable}
 
 \usepackage[protrusion=true,expansion=true]{microtype}	
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{breqn}
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
 \usepackage{import}
-
-\usepackage[margin=2cm]{geometry}
+\pagenumbering{arabic}
+%margenes 
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=19mm,
+ right=19mm,
+ top=19mm,
+ bottom=42mm,
+ }
 
 % %%% Custom sectioning
 \usepackage{sectsty}

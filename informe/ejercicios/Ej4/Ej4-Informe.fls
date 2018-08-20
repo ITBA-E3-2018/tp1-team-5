@@ -1,0 +1,9 @@
+PWD /home/lu/Documents/Electro III/tp1-team-5/informe/ejercicios/Ej4
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/lu/Documents/Electro III/tp1-team-5/informe/ejercicios/Ej4/Ej4-Informe.tex
+OUTPUT Ej4-Informe.log
+INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
