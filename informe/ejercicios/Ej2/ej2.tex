@@ -1,1 +1,60 @@
 \section{Ejercicio 2}
+\subsection{Introducción}
+\newcommand\Tstrut{\rule{0pt}{2.4ex}}
+Se tiene una función dada por:
+
+\[
+	f(d,c,b,a)=\prod\left(M_{0},M_{1},M_{5},M_{7},M_{8},M_{10},M_{14},M_{15}\right)
+\]
+
+A partir de esto se construyó la siguiente tabla de verdad, completando únicamente los máxterminos de aquellos estados en los que la función valía 0, ya que éstos son los que nos serán de utilidad:
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        i   & $d=X_1$ & $c=X_2$ & $b=X_3$ & $a=X_4$ & $f=()$ & $M_i$ \\\hline
+        0   &  0 & 0 & 0 & 0 & 0 & \(X_{1}+X_{2}+X_{3}+X_{4}\) \\ \hline
+        1   &  0 & 0 & 0 & 1 & 0 & \(X_{1}+X_{2}+X_{3}+\overline{X_{4}}\)\Tstrut\\ \hline
+        2   &  0 & 0 & 1 & 0 & 1 & -\\ \hline
+        3   &  0 & 0 & 1 & 1 & 1 & -\\ \hline
+        4   &  0 & 1 & 0 & 0 & 1 & -\\\hline
+        5   &  0 & 1 & 0 & 1 & 0 & \(X_{1}+\overline{X_{2}}+X_{3}+\overline{X_{4}}\)\Tstrut\\ \hline
+        6   &  0 & 1 & 1 & 0 & 1 & -\\ \hline
+        7   &  0 & 1 & 1 & 1 & 0 & \(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut\\ \hline
+        8   &  1 & 0 & 0 & 0 & 0 & \(\overline{X_{1}}+X_{2}+X_{3}+X_{4}\)\Tstrut\\ \hline
+        9   &  1 & 0 & 0 & 1 & 1 & -\\ \hline
+        10  &  1 & 0 & 1 & 0 & 0 & \(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4}\)\Tstrut\\ \hline
+        11  &  1 & 0 & 1 & 1 & 1 & -\\ \hline
+        12  &  1 & 1 & 0 & 0 & 1 & -\\ \hline
+        13  &  1 & 1 & 0 & 1 & 1 & -\\ \hline
+        14  &  1 & 1 & 1 & 0 & 0 & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4}\)\Tstrut\\ \hline
+        15  &  1 & 1 & 1 & 1 & 0 & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut\\ \hline
+        \end{tabular}
+    \caption{Tabla de verdad de la función dada.}
+    \end{center}
+    \label{table:2.1}
+\end{table}
+
+De esta manera, la función está dada por productos de sumas de las variables (máxterminos).
+
+%la tabla \ref{table:2.1}.
+
+\subsection{Simplificación aplicando álgebra booleana}
+
+Se tiene entonces:
+\begin{dmath}
+    f(d,c,b,a)=M_{0}*M_{1}*M_{5}*M_{7}*M_{8}*M_{10}*M_{14}*M_{15}
+\end{dmath}
+Que es equivalente a:
+\begin{dmath}
+    f(d,c,b,a)={(X_{1}+X_{2}+X_{3}+X_{4})}*{(X_{1}+X_{2}+X_{3}+\overline{X_{4}})}*{(X_{1}+\overline{X_{2}}+X_{3}+\overline{X_{4}})}*
+    {(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{3}+X_{4})}*{(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4})}*
+    {(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}
+\end{dmath}
+
+
+\subsection{Simplificación aplicando mapas de Karnaugh}
+\subsection{Circuito lógico resultante}
+\subsubsection{Utilizando compuertas AND, OR, NOT.}
+\subsubsection{Utilizando compuertas NOR.}
