@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
  \geometry{
  a4paper,
@@ -10,11 +11,9 @@
  }
  
 \begin{document}	
-	Comentarios:
-	\newline -Falta Revision ortografica
 	\section{Ejercicio 4}
-	\subsection{Introduccion}
-		\hspace{10mm} Para implementar un circuito que convierta un numero binario de 4 bits en su complemento a dos se empezo pensando este circuito como una caja negra con 4 entradas y 4 salidas:
+	\subsection{Introducción}
+		\hspace{10mm} Para implementar un circuito que convierta un numero binario de 4 bits en su complemento a dos se empezó pensando este circuito como una caja negra con 4 entradas y 4 salidas:
 		\begin{figure}[h!]
 			\includegraphics[width=\linewidth,scale=0.5]{comp2.png}
   			\caption{Caja Negra Complemento a 2}
@@ -26,15 +25,15 @@
 		\end{figure}
 		\newline \hspace{10mm} La salida tras el complemento a uno sabemos que es cada bit negado, es decir que atraviesan una compuerta NOT. De esta manera a la salida de el complemento a uno que se obtiene es: 
 		\newline \centerline{$\overline{a} \overline{b} \overline{c} \overline{d}$} 
-		\hspace{10mm} Ahora lo unico que falta es sumarle uno.
+		\hspace{10mm} Ahora lo único que falta es sumarle uno.
 	\subsection{Expresion de la salida en minterminos}
-		\hspace{10mm} La expresion de la salida queda determinada por las entrada a traves de la siguiente formula deducida en la introduccion:
+		\hspace{10mm} La expresión de la salida queda determinada por las entrada a través de la siguiente formula deducida en la introducción:
 		\newline \centerline{$\overline{a} \overline{b} \overline{c} \overline{d}$}
 		\newline \centerline{$+0001$}
 		\newline \centerline{$----$}
 		\newline \centerline{$efgh$}	
-		\newline \hspace{10mm} Para la creacion de las tablas de valor se debe observar que el output de cada bit depende de el resultado de el input de los bits menos significativos que con el que se esta trabajando.
-		\newline Para el BMS la tabla de verdad es muy simple y no vale la pena el uso de minterminos por lo que se vera a continuacion:
+		\newline \hspace{10mm} Para la creación de las tablas de valor se debe observar que el output de cada bit depende de el resultado de el input de los bits menos significativos que con el que se esta trabajando.
+		\newline Para el BMS la tabla de verdad es muy simple y no vale la pena el uso de minterminos por lo que se vera a continuación:
 		\begin{table}[h!]
 			\begin{center}
 				\caption{Tabla para bit h}
@@ -46,7 +45,7 @@
 				\end{tabular}
 			\end{center}
 		\end{table}
-		\newline Facilmente de la tabla se puede observar que h resulta ser la entrada negada. Por lo que resulta la primera relacion de entrada-salida:
+		\newline Fácilmente de la tabla se puede observar que h resulta ser la entrada negada. Por lo que resulta la primera relación de entrada-salida:
 		\begin{equation}
 			\centerline{$h(d)=\overline{\overline{d}}$}
 		\end{equation}
@@ -64,7 +63,7 @@
 				\end{tabular}
 			\end{center}
 		\end{table}	
-		\newline Al escribir la salida en funcion de los minterminos se llega a la siguiente expresion:
+		\newline Al escribir la salida en función de los minterminos se llega a la siguiente expresión:
 		\newline \centerline{$g(c,d)=m_{1}+m_{2}$}
 		\begin{equation}
 			\centerline{$g(c,d)=\overline{\overline{c}}\overline{d}+\overline{c}\overline{\overline{d}}$}
@@ -87,7 +86,7 @@
 				\end{tabular}
 			\end{center}
 		\end{table}
-		\newline Al escribir la salida en funcion de los minterminos se llega a la siguiente expresion:
+		\newline Al escribir la salida en función de los minterminos se llega a la siguiente expresión:
 		\newline \centerline{$f(b,c,d)=m_{3}+m_{4}+m_{5}+m_{6}$}
 		\begin{equation}
 			\centerline{$f(b,c,d)=\overline{\overline{b}}\overline{c}\overline{d}+\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{b}\overline{\overline{c}}\overline{d}+\overline{b}\overline{c}\overline{\overline{d}}$}
@@ -118,12 +117,12 @@
 				\end{tabular}
 			\end{center}
 		\end{table}
-		\newline Al escribir la salida en funcion de los minterminos se llega a la siguiente expresion:
+		\newline Al escribir la salida en función de los minterminos se llega a la siguiente expresión:
 		\newline \centerline{$e(a,b,c,d)=m_{6}+m_{7}+m_{8}+m_{9}+m_{10}+m_{11}+m_{12}+m_{13}+m_{14}$}
 		\begin{equation}
 			\centerline{$e(a,b,c,d)=\overline{\overline{a}}\overline{b}\overline{c}\overline{d}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{d}+\overline{a}\overline{\overline{b}}\overline{c}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{c}\overline{d}+\overline{a}\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{b}\overline{\overline{c}}\overline{d}+\overline{a}\overline{b}\overline{c}\overline{\overline{d}}$}
 		\end{equation}
-	\subsection{Simplificacion de las ecuaciones resultantes}
+	\subsection{Simplificación de las ecuaciones resultantes}
 		\hspace{10mm} Para reducir las 4 expresiones resultantes procedemos a utilizar la propiedad:
 		\newline \centerline{$\overline{\overline{a}}=a$}
 		Lo cual da como resultado las 4 siguientes ecuaciones:
@@ -133,13 +132,13 @@
 				f & = b\overline{c}\overline{d}+\overline{b}cd+\overline{b}c\overline{d}+\overline{b}\overline{c}d\\
 				e & = a\overline{b}\overline{c}\overline{d}+\overline{a}bcd+\overline{a}bc\overline{d}+\overline{a}b\overline{c}d+\overline{a}b\overline{c}\overline{d}+\overline{a}\overline{b}cd+\overline{a}\overline{b}c\overline{d}+\overline{a}\overline{b}\overline{c}d
 			\end{align*}
-			De estas cuatro expresiones las primeras no son posibles de reducir mas. Pero la tercera y cuarta son posibles de reducir con el uso de las siguientes propeidades:
+			De estas cuatro expresiones las primeras no son posibles de reducir mas. Pero la tercera y cuarta son posibles de reducir con el uso de las siguientes propiedades:
 			\begin{align*}
 				a+a & = a\\
 				a+\overline{a} & = 1\\
 				ab+cb & = b(a+c)
 			\end{align*} 
-			La primera propiedad significa que puedo sumar uno de los minterminos a la expresion que esta no se vera afectada si ese mintermino ya pertenecia a la expresion. Con la segunda expresion puedo sacar 'factor comun' los terminos que difieran en una variable y su complemento de manera que al hacer el factor comun quede de la forma $f(a,b,...)(z+\overline{z})$ y asi utilizar la tercera propiedad que simplifica esa expresion a $f(a,b,...)$. De esta manera las ecuaciones se simplifican a su froma final que es de la siguiente manera:
+			La primera propiedad significa que puedo sumar uno de los minterminos a la expresión que esta no se vera afectada si ese mintermino ya pertenecía a la expresión. Con la segunda expresión puedo sacar 'factor común' los términos que difieran en una variable y su complemento de manera que al hacer el factor común quede de la forma $f(a,b,...)(z+\overline{z})$ y así utilizar la tercera propiedad que simplifica esa expresión a $f(a,b,...)$. De esta manera las ecuaciones se simplifican a su forma final que es de la siguiente manera:
 			\begin{align*}
 				h & = d\\
 				g & = c\overline{d}+\overline{c}d\\
@@ -147,9 +146,9 @@
 				e & = a\overline{b}\overline{c}\overline{d}+\overline{a}\overline{c}d+\overline{a}\overline{b}c+\overline{a}b
 			\end{align*}
 	\subsection{Circuito Resultante}
-	Al implementar las expresiones halladas en la seccion anterior con compuertas AND, OR y NOT se llega al siguiente circuito: 
+	Al implementar las expresiones halladas en la sección anterior con compuertas AND, OR y NOT se llega al siguiente circuito: 
 	\begin{figure}[h!]
 			\includegraphics[width=\linewidth,scale=0.5]{circuitoEj4.png}
-  			\caption{Circuito de conversion a complemento a dos}
+  			\caption{Circuito de conversión a complemento a dos}
 		\end{figure}
 \end{document}
