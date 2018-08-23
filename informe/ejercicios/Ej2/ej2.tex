@@ -10,6 +10,7 @@ Se tiene una función dada por:
 A partir de esto se construyó la siguiente tabla de verdad, completando únicamente los máxterminos de aquellos estados en los que la función valía 0, ya que éstos son los que nos serán de utilidad:
 
 \begin{table}[h!]
+    \caption{Tabla de verdad de la función dada.}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
@@ -31,7 +32,6 @@ A partir de esto se construyó la siguiente tabla de verdad, completando únicam
         14  &  1 & 1 & 1 & 0 & 0 & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4}\)\Tstrut\\ \hline
         15  &  1 & 1 & 1 & 1 & 0 & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut\\ \hline
         \end{tabular}
-    \caption{Tabla de verdad de la función dada.}
     \end{center}
     \label{table:2.1}
 \end{table}
@@ -61,7 +61,53 @@ Utilizando la propiedad del álgebra booleana \((x+y)(x+\overline{y}=x)\) sobre 
     f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}})}*{(X_{1}+\overline{X_{2}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{4})}
 \end{dmath}
 \vspace{5mm}
+
+
+
 \subsection{Simplificación aplicando mapas de Karnaugh}
+
+\begin{table}[!htb]
+    \caption{Global caption}
+    \begin{minipage}{.5\linewidth}
+      %\caption{}
+      \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            3 & 4\\
+            \hline
+            3 & 4\\
+            \hline
+        \end{tabular}
+    \end{minipage}%
+    \begin{minipage}{.5\linewidth}
+      \centering
+        %\caption{}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            - & \(X_{1}\) \(X_{2}\) & \(X_{1}\) \(X_{2}\) & \(X_{1}\) \(X_{2}\) & \(X_{1}\) \(X_{2}\)\\
+            & 0   0 & 0  1 & 1   1 & 1   0\\
+            \hline
+            \(X_{3}\) 0& 0 0 & 0 1 & 1 1 & 1 0\\
+            \(X_{4}\) 0 & 0 0 & 0 1 & 1 1 & 1 0\\
+            \hline
+            \(X_{3}\) 0& 0 0 & 0 1 & 1 1 & 1 0\\
+            \(X_{4}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
+            \hline
+            \(X_{3}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
+            \(X_{4}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
+            \hline
+            \(X_{3}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
+            \(X_{4}\) 0& 0 0 & 0 1 & 1 1 & 1 0\\
+            \hline
+            
+            
+
+        \end{tabular}
+    \end{minipage} 
+\end{table}
+
 \subsection{Circuito lógico resultante}
 \subsubsection{Utilizando compuertas AND, OR, NOT.}
+
 \subsubsection{Utilizando compuertas NOR.}
+
