@@ -67,44 +67,81 @@ Utilizando la propiedad del álgebra booleana \((x+y)(x+\overline{y}=x)\) sobre 
 \subsection{Simplificación aplicando mapas de Karnaugh}
 
 \begin{table}[!htb]
-    \caption{Global caption}
+    \caption{Mapa de Karnaugh de la función dada.}
+    \vspace{5mm} %5mm vertical space
     \begin{minipage}{.5\linewidth}
       %\caption{}
-      \centering
-        \begin{tabular}{|c|c|}
-            \hline
-            3 & 4\\
-            \hline
-            3 & 4\\
-            \hline
-        \end{tabular}
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \diagbox{\(X_{3}\), \(X_{4}\)}{\(X_{1}\), \(X_{2}\)} & 0   0 & 0  1 & 1   1 & 1   0 \\
+        \hline
+        0& \multirow{ 2}{*}{\(M_{0}\)}  & \multirow{ 2}{*}{\(M_{4}\)} & \multirow{ 2}{*}{\(M_{12}\)} & \multirow{ 2}{*}{\(M_{8}\)}\\
+        0&   &  &  & \\
+        \hline
+        0& \multirow{ 2}{*}{\(M_{1}\)}  & \multirow{ 2}{*}{\(M_{5}\)} & \multirow{ 2}{*}{\(M_{13}\)} & \multirow{ 2}{*}{\(M_{9}\)}\\
+        1& &  &  & \\
+        \hline
+        1& \multirow{ 2}{*}{\(M_{3}\)}  & \multirow{ 2}{*}{\(M_{7}\)} & \multirow{ 2}{*}{\(M_{15}\)} & \multirow{ 2}{*}{\(M_{11}\)}\\
+        1& &  &  & \\
+        \hline
+        1& \multirow{ 2}{*}{\(M_{2}\)}  & \multirow{ 2}{*}{\(M_{6}\)} & \multirow{ 2}{*}{\(M_{14}\)} & \multirow{ 2}{*}{\(M_{10}\)}\\
+        0& &  &  & \\
+        \hline
+    \end{tabular}
     \end{minipage}%
+    \scalebox{1.9}{$\boldsymbol{\longrightarrow}$}%
     \begin{minipage}{.5\linewidth}
       \centering
-        %\caption{}
         \begin{tabular}{|c|c|c|c|c|c|c|}
             \hline
-            - & \(X_{1}\) \(X_{2}\) & \(X_{1}\) \(X_{2}\) & \(X_{1}\) \(X_{2}\) & \(X_{1}\) \(X_{2}\)\\
-            & 0   0 & 0  1 & 1   1 & 1   0\\
+            \diagbox{\(X_{3}\), \(X_{4}\)}{\(X_{1}\), \(X_{2}\)} & 0   0 & 0  1 & 1   1 & 1   0 \\
             \hline
-            \(X_{3}\) 0& 0 0 & 0 1 & 1 1 & 1 0\\
-            \(X_{4}\) 0 & 0 0 & 0 1 & 1 1 & 1 0\\
+            0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0}\\
+            0&   &  &  & \\
             \hline
-            \(X_{3}\) 0& 0 0 & 0 1 & 1 1 & 1 0\\
-            \(X_{4}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
+            0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1}\\
+            1& &  &  & \\
             \hline
-            \(X_{3}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
-            \(X_{4}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
+            1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1}\\
+            1& &  &  & \\
             \hline
-            \(X_{3}\) 1& 0 0 & 0 1 & 1 1 & 1 0\\
-            \(X_{4}\) 0& 0 0 & 0 1 & 1 1 & 1 0\\
+            1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0}\\
+            0& &  &  & \\
             \hline
-            
-            
-
         \end{tabular}
     \end{minipage} 
 \end{table}
+
+Nos es de interés para simplificar aplicando mapas de Karnaugh aquellos máxterminos en los que la función vale 0, agrupándolos de a 8, 4, 2 ó 1, según se pueda e intentando que los grupos sean lo más grande posible. Si tomamos 4 grupos de a 2 verticales, como muestra la tabla 
+
+\begin{table}[!htb]
+    \centering
+    \caption{Mapa de Karnaugh de la función dada.}
+    \vspace{5mm} %5mm vertical space
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \diagbox{\(X_{3}\), \(X_{4}\)}{\(X_{1}\), \(X_{2}\)} & 0   0 & 0  1 & 1   1 & 1   0 \\
+        \hline
+        0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0}\\
+        0&   &  &  & \\
+        \hline
+        0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1}\\
+        1& &  &  & \\
+        \hline
+        1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1}\\
+        1& &  &  & \\
+        \hline
+        1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0}\\
+        0& &  &  & \\
+        \hline
+    \end{tabular}
+\label{table:2.2circled}
+\begin{tikzpicture}[overlay]
+    \draw[blue] (0.5,0.5) ellipse (0.2cm and 0.5cm);
+   \end{tikzpicture} 
+\end{table}
+
+
 
 \subsection{Circuito lógico resultante}
 \subsubsection{Utilizando compuertas AND, OR, NOT.}
