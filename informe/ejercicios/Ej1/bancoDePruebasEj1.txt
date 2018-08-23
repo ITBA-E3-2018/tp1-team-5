@@ -1,0 +1,76 @@
+BANCO DE PRUEBAS (TP1-ELECTRO3-ej1)
+
+////////TESTEO DE DETECCION DE ERRORES
+1)
+	Input:1 0 1
+	Output:ERROR al especificar bit de parte entera (segundo parametro)
+	//La salida es correcta ya que se considera que carece de sentido un numero que no tenga al menos un digito para la parte entera.
+
+2)
+	Input:1 1 -1
+	Output:ERROR al especificar bits de parte fraccionaria (tercer parametro)
+	//La salida es correcta ya que los bits de parte fraccionaria deben ser una cantidad natural positiva o cero.
+
+3)
+	Input:2 1 1
+	Output: ERROR al especificar bit de signo (primer parametro)
+	//La salida es correcta ya que el bit de signo puede ser '0' o '1'.
+
+4)
+	Input:1 -3 -3
+	Output:ERROR al especificar los bits de la parte entera (segundo parametro)
+	//La salida detecta ERROR correctamente, pero solo informa al usuario del primer error que ingresa por linea de comando
+	//y no lo previene de todos los errores existentes, en caso deque haya multiples errores en la linea de comando.
+
+//////TESTEO DE CASOS BASICOS
+
+5)
+	Input:1 1 1
+	Output:Rango: 1.500000 , Resolucion: 0.500000
+	//La salida es correcta
+
+6)
+	Input:0 1 1
+	Output:Rango: 1.500000 , Resolucion: 0.500000
+	//La salida es correcta
+
+7)
+	Input:0 5 3
+	Output: Rango: 31.875000 , Resolucion: 0.125000 
+	//La salida es correcta
+
+8)
+	Input:1 8 4
+	Output: Rango: 255.937500 , Resolucion: 0.062500 
+	//La salida es correcta
+
+9)
+	Input:1 12 0
+	Output:Rango: 4095.000000 , Resolucion: 1.000000 
+	//La salida es correcta (observacion: si no hay bits de parte fraccionaria la resolucion es 1)
+
+////PRUEBAS CON NUMERO DE BITS ELEVADOS
+
+10)
+	Input:0 10 15
+	Output:Rango: 1023.999969 , Resolucion: 0.000031
+	//La salida no es del todo correcta, los resultados estan redondeados en el último digito
+
+11)
+	Input:1 10 20
+	Output:Rango: 1023.999999 , Resolucion: 0.000001 
+	//La salida no es del todo correcta, los resultados estan redondeados en el último digito
+
+12)
+	Input:1 10 30
+	Output:Resultado aproximado:
+		Rango: 1024.000000 , Resolucion: < 0.000001
+	//La salida no es del todo correcta, hay redondeo en el rango, pero el programa
+	//avisa que no puede mostrar la resolucion de manera exacta.
+	
+13)	Input:0 50 12
+	Output: Rango: 1125899906842623.999756 , Resolucion: 0.000244 
+	//La salida es redondeada
+
+
+////////////////////////
