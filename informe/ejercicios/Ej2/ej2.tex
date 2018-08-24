@@ -137,10 +137,39 @@ Nos es de interés para simplificar aplicando mapas de Karnaugh aquellos máxter
     \end{tabular}
 \label{table:2.2circled}
 \begin{tikzpicture}[overlay]
-    \draw[blue] (0.5,0.5) ellipse (0.2cm and 0.5cm);
-   \end{tikzpicture} 
+    \draw[blue] (-3.05,0.5) ellipse (0.35cm and 0.7cm);
+    \draw[blue] (-2.2,-0.35) ellipse (0.35cm and 0.7cm);
+    \draw[blue] (-1.32,-1.15) ellipse (0.35cm and 0.7cm);
+    \draw[blue] (-0.50,0.95) circle (0.35cm and 0.35cm);
+    \draw[blue] (-0.50,-1.60) circle (0.35cm and 0.35cm);
+\end{tikzpicture} 
 \end{table}
 
+Aquellos seleccionados de manera unitaria en la última columna se tomaron como un grupo de 2.
+Con ésto en cuenta, se puede notar lo siguiente de cada pareja:
+\begin{itemize}
+    \item En el primer grupo de la primera columna, las variables \(X_1, X_2~y~X_3\) valen 0 y no cambian; sí lo hace \(X_4\).
+    \item En el segundo grupo, en la segunda columna, las variables que no cambian son \(X_1, X_2~y~X_4\); \(X_1\) vale 0, y \(X_1~y~X_2 \) valen 1, de manera contraria, sí cambia \(X_3\).
+    \item En el tercer grupo de ceros, $X_1, X_2~y~X_3$ no cambian y valen 1; notamos que \(X_4\) sí modifica su valor.
+    \item En el cuarto grupo en la última columna, $X_1, X_2~y~X_4$ mantienen su valor; con \(X_1\) valiendo 1, y \(X_2,~X_4\), 0; \(X_3\) sí modifica su valor.
+\end{itemize}
+\vspace{5mm}
+\onehalfspacing{Para realizar entonces la simplificación, recordemos que queremos productos de sumas tal que la función sea nula. En el caso del primer grupo, la manera de lograrlo es $X_{1}+X_{2}+X_{3}$, 
+ya que sólo cuando las tres variables valen cero simultáneamente, este término valdrá cero; como $X_4$ cambia su valor no nos es de interés para la expresión.
+De manera análoga para el segundo grupo, podemos lograr que valga cero únicamente con $X_1+\overline{X_2}+\overline{X_4}$. El hecho de negar las variables se debe a que estas valen 1, y se quiere lo contrario.
+Para el tercer grupo, el cero se consigue como $\overline{X_1}+\overline{X_2}+\overline{X_3}$, las tres variables valen 1, por eso se niegan.
+Con el cuarto y último grupo, la nulidad se consigue con $\overline{X_1}+X_2+X_4$.}
+
+
+\vspace{5mm}
+Si se combinan los términos, terminamos con la siguiente expresión:
+\vspace{5mm}
+\begin{dmath}
+    f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(X_1+\overline{X_2}+\overline{X_4})}*{(\overline{X_1}+\overline{X_2}+\overline{X_3})}*{(\overline{X_1}+X_2+X_4)}
+\end{dmath}
+\vspace{5mm}
+
+ES fácil ver que la expresión es idéntica a la simplificación con el álgebra booleana. Vale agregar que tomando los grupos más grandes posibles al hacer la simplificación con mapas de Karnaugh se llega a la expresión más simplificada posible. Esto verifica también que con el álgebra booleana se pudo reducir la función a su mínima expresión.
 
 
 \subsection{Circuito lógico resultante}
