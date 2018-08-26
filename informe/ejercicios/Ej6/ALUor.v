@@ -1,8 +1,8 @@
 /*
-    Modulo que realiza la operacion and entre dos numeros de
+    Modulo que realiza la operacion or entre dos numeros de
     N-bits. El parametro  es el numero de bits de los inputs
 */
-module ALUand(input1, input2, out);
+module ALUor(input1, input2, out);
 
     parameter N=3;
     //Input ports
@@ -11,6 +11,6 @@ module ALUand(input1, input2, out);
 
     //Output ports
     output[N:0] out;
-    assign out= input1 & input2;
+    assign out= input1 | input2;
 
 endmodule
