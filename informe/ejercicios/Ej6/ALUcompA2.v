@@ -1,24 +1,12 @@
-module FourBitTwoComplement(
-    inputA,
-    inputB,
-    inputC,
-    inputD,
-    outputE,
-    outputF,
-    outputG,
-    outputH
+module ALUcompA2(
+    input1,
+    output1
 );
-    input inputA;
-    input inputB;
-    input inputC;
-    input inputD;
-    output outputE;
-    output outputF;
-    output outputG;
-    output outputH;
+    parameter N=3;
+    input[N:0] input1;
+    output[N:0] output1;
+    reg[N:0] binaryOne = 1;
 
-    assign outputH = inputD;
-    assign outputG = (inputC & ~inputD)|(~inputC & inputD);
-    assign outputF = (inputB & ~inputC & ~inputD)|(~inputB & inputC)|(~inputB & inputD);
-    assign outputE = (inputA & ~inputB & ~inputC & ~inputD)||(~inputA & ~inputC & inputD)||(~inputA & ~inputB & inputC)||(~inputA & inputB);
+    assign output1 = (~input1)+binaryOne;
+    
 endmodule

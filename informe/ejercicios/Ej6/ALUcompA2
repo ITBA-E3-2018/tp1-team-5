@@ -1,0 +1,89 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55a7016be350 .scope module, "ALUcompA2_tb" "ALUcompA2_tb" 2 3;
+ .timescale 0 0;
+P_0x55a7016be4d0 .param/l "N" 0 2 5, +C4<00000000000000000000000000000011>;
+v0x55a7016deba0_0 .var "inputN", 3 0;
+v0x55a7016dec90_0 .net "outputN", 3 0, L_0x55a7016dede0;  1 drivers
+S_0x55a7016be570 .scope module, "inst2" "ALUcompA2" 2 8, 3 1 0, S_0x55a7016be350;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /OUTPUT 4 "output1"
+P_0x55a7016be740 .param/l "N" 0 3 5, +C4<00000000000000000000000000000011>;
+L_0x55a7016b74c0 .functor NOT 4, v0x55a7016deba0_0, C4<0000>, C4<0000>, C4<0000>;
+v0x55a7016be810_0 .net *"_s0", 3 0, L_0x55a7016b74c0;  1 drivers
+v0x55a7016de890_0 .var "binaryOne", 3 0;
+v0x55a7016de970_0 .net "input1", 3 0, v0x55a7016deba0_0;  1 drivers
+v0x55a7016dea60_0 .net "output1", 3 0, L_0x55a7016dede0;  alias, 1 drivers
+L_0x55a7016dede0 .arith/sum 4, L_0x55a7016b74c0, v0x55a7016de890_0;
+    .scope S_0x55a7016be570;
+T_0 ;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55a7016de890_0, 0, 4;
+    %end;
+    .thread T_0;
+    .scope S_0x55a7016be350;
+T_1 ;
+    %vpi_call 2 11 "$monitor", "Input: %b  \012Output: %b", v0x55a7016deba0_0, v0x55a7016dec90_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x55a7016deba0_0, 0, 4;
+    %delay 10, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "ALUcompA2_tb.v";
+    "./ALUcompA2.v";
