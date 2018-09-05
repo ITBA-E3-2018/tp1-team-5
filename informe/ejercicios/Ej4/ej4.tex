@@ -26,7 +26,7 @@ A su vez, sabemos que el complemento a dos se realiza aplicando el complemento a
 \centerline{$efgh$}	
 \hspace{10mm} Para la creación de las tablas de valor se debe observar que el output de cada bit depende del resultado de el input de los bits menos significativos que con el que se está trabajando.
 Para el BMS la tabla de verdad es muy simple y no vale la pena el uso de mintérminos por lo que se verá a continuación:
-\begin{table}[h!]
+\begin{table}[H]
 	\begin{center}
 		\caption{Tabla para bit h}
 		\vspace{5mm}
@@ -39,12 +39,12 @@ Para el BMS la tabla de verdad es muy simple y no vale la pena el uso de mintér
 	\end{center}
 \end{table}
 
-Fácilmente de la tabla se puede observar que h resulta ser la entrada negada. Por lo que resulta la primera relación de entrada-salida:
+Fácilmente de la tabla se puede observar que h resulta ser la entrada negada. Por lo que resulta la primera relación de entrada-salida:\\
 \begin{equation}
 	\centerline{$h(d)=\overline{\overline{d}}$}
 \end{equation}
 Para la salida correspondiente al bit g la tabla de verdad es de la siguiente manera:
-\begin{table}[h!]
+\begin{table}[H]
 	\begin{center}
 		\caption{Tabla para bit g}
 		\vspace{5mm}
@@ -58,13 +58,13 @@ Para la salida correspondiente al bit g la tabla de verdad es de la siguiente ma
 		\end{tabular}
 	\end{center}
 \end{table}	
-Al escribir la salida en función de los mintérminos se llega a la siguiente expresión:
+Al escribir la salida en función de los mintérminos se llega a la siguiente expresión:\\
 \centerline{$g(c,d)=m_{1}+m_{2}$}
 \begin{equation}
 	\centerline{$g(c,d)=\overline{\overline{c}}\overline{d}+\overline{c}\overline{\overline{d}}$}
 \end{equation}
-Ahora para el bit f se requiere una tabla de verdad de tres variables ya que ahora depende del carry causado por las variables de entrada c y d:
-\begin{table}[h!]
+Ahora para el bit f se requiere una tabla de verdad de tres variables ya que ahora depende del carry causado por las variables de entrada c y d:\\
+\begin{table}[H]
 	\begin{center}
 		\caption{Tabla para bit f}
 		\vspace{5mm}
@@ -82,13 +82,13 @@ Ahora para el bit f se requiere una tabla de verdad de tres variables ya que aho
 		\end{tabular}
 	\end{center}
 \end{table}
-Al escribir la salida en función de los mintérminos se llega a la siguiente expresión:
+Al escribir la salida en función de los mintérminos se llega a la siguiente expresión:\\
 \centerline{$f(b,c,d)=m_{3}+m_{4}+m_{5}+m_{6}$}
 \begin{equation}
 	\centerline{$f(b,c,d)=\overline{\overline{b}}\overline{c}\overline{d}+\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{b}\overline{\overline{c}}\overline{d}+\overline{b}\overline{c}\overline{\overline{d}}$}
 \end{equation}
-Para el bit e la tabla de verdad es la siguiente:
-\begin{table}[h!]
+Para el bit e la tabla de verdad es la siguiente:\\
+\begin{table}[H]
 	\begin{center}
 		\caption{Tabla para bit e}
 		\vspace{5mm}
@@ -114,14 +114,15 @@ Para el bit e la tabla de verdad es la siguiente:
 		\end{tabular}
 	\end{center}
 \end{table}
-Al escribir la salida en función de los mintérminos se llega a la siguiente expresión:
+Al escribir la salida en función de los mintérminos se llega a la siguiente expresión:\\
 \centerline{$e(a,b,c,d)=m_{6}+m_{7}+m_{8}+m_{9}+m_{10}+m_{11}+m_{12}+m_{13}+m_{14}$}
 \begin{equation}
 	\centerline{$e(a,b,c,d)=\overline{\overline{a}}\overline{b}\overline{c}\overline{d}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{\overline{c}}\overline{d}+\overline{a}\overline{\overline{b}}\overline{c}\overline{\overline{d}}+\overline{a}\overline{\overline{b}}\overline{c}\overline{d}+\overline{a}\overline{b}\overline{\overline{c}}\overline{\overline{d}}+\overline{a}\overline{b}\overline{\overline{c}}\overline{d}+\overline{a}\overline{b}\overline{c}\overline{\overline{d}}$}
 \end{equation}
+
+
 \subsection{Simplificación de las ecuaciones resultantes}
-\hspace{10mm} Para reducir las 4 expresiones resultantes procedemos a utilizar la propiedad:
-\centerline{$\overline{\overline{a}}=a$}
+Para reducir las 4 expresiones resultantes procedemos a utilizar la propiedad $~~\overline{\overline{a}}=a$.\\
 Lo cual da como resultado las 4 siguientes ecuaciones:
 \begin{align*}
 	h & = d                                                                                                                                                                                                                                                        \\
@@ -142,8 +143,10 @@ La primera propiedad significa que puedo sumar uno de los mintérminos a la expr
 	f & = b\overline{c}\overline{d}+\overline{b}c+\overline{b}d                                                   \\
 	e & = a\overline{b}\overline{c}\overline{d}+\overline{a}\overline{c}d+\overline{a}\overline{b}c+\overline{a}b 
 \end{align*}
+
+
 \subsection{Circuito Resultante}
-Al implementar las expresiones halladas en la sección anterior con compuertas AND, OR y NOT se llega al siguiente circuito: 
+Al implementar las expresiones halladas en la sección anterior con compuertas AND, OR y NOT se llega al siguiente circuito: \\
 \begin{figure}[H]
     \begin{center}
 	\includegraphics[scale=0.6]{circuitoEj4.png}
