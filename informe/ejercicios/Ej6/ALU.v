@@ -22,19 +22,5 @@ output1[N:0] output1;
 
 //segun el input en operation, se ejecuta una operacion en particular
 //si la operacion requiere solo un input, se elige el input1 y se ignora input2
-
-case (operation)
-/*
-    0 : ALUand and();
-    1 : ;
-    2 : ;
-    3 : ;
-    4 : ;
-    5 : ;
-    6 : ;
-    7 : ;
-    8 : ;
-*/
-endcase
     
 endmodule
