@@ -1,0 +1,18 @@
+\section{Ejercicio 5}
+\subsection{Introducción}
+
+Se implementó un sumador de dos números de un dígito en formato BCD, expresando la salida como un número de dos dígitos, también en formato BCD.
+Para ésto, primero se realizó un análisis sobre la suma BCD, y luego se implementó en un circuito.
+Se tienen entonces dos números en BCD, que son dos dígitos menores a 9 (pues están en formato BCD). Se realiza una suma convenciional en binario. Seguidamente se compara con 9, ya que si la suma es menor a 9, está representado automáticamente en BCD.
+Si la suma es menor a 9, se le debe sumar un offset de 6 para obtener un 1 en el dígito más significativo, y así, el resultado final. 
+
+Con este razonamiento, se realizó la siguiente implementación:
+\begin{figure}[H]
+    \begin{center}
+        \caption{Circuito lógico del sumador de dígitos BCD.}
+\includegraphics[scale=0.5]{circuito.png}
+    \end{center}
+\end{figure}
+
+Se puede ver de manera sencilla la lógica que se siguió para el sumador pedido. El resultado final serán dos nibbles. El nibble más significativo es el OR entre los carry de ambos sumadores, que se relaciona con la comparación de si la suma convencional 
+en binario da mayor a 9 o no. Por último el nibble menos significativo es el resultado del sumador 2, es decir, la suma en binario con el offset, que es $+6$ ó $0$; siendo $0$ si el Sumador 1 no da mayor a $9$).
