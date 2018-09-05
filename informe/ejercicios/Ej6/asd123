@@ -1,0 +1,42 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x11de730 .scope module, "inputBitSet_tb" "inputBitSet_tb" 2 2;
+ .timescale 0 0;
+v0x1223950_0 .var "bitEnable", 0 0;
+v0x1223a20_0 .var "bitIn1", 0 0;
+v0x1223ad0_0 .var "bitIn2", 0 0;
+v0x1223b80_0 .net "bitOut1", 0 0, L_0x1223d10; 1 drivers
+v0x1223c60_0 .net "bitOut2", 0 0, L_0x1223e60; 1 drivers
+S_0x11de820 .scope module, "bitSetter" "inputBitSet" 2 10, 3 1, S_0x11de730;
+ .timescale 0 0;
+L_0x1223d10 .functor AND 1, v0x1223950_0, v0x1223a20_0, C4<1>, C4<1>;
+L_0x1223e60 .functor AND 1, v0x1223950_0, v0x1223ad0_0, C4<1>, C4<1>;
+v0x1213c00_0 .net "bitEnable", 0 0, v0x1223950_0; 1 drivers
+v0x12236c0_0 .net "bitIn1", 0 0, v0x1223a20_0; 1 drivers
+v0x1223760_0 .net "bitIn2", 0 0, v0x1223ad0_0; 1 drivers
+v0x1223800_0 .alias "bitOut1", 0 0, v0x1223b80_0;
+v0x12238b0_0 .alias "bitOut2", 0 0, v0x1223c60_0;
+    .scope S_0x11de730;
+T_0 ;
+    %cassign/v v0x1223a20_0, 1, 1;
+    %cassign/v v0x1223ad0_0, 0, 1;
+    %cassign/v v0x1223950_0, 1, 1;
+    %delay 1, 0;
+    %vpi_call 2 17 "$display", "input: %b, %b, enable: %b, output: %b, %b", v0x1223a20_0, v0x1223ad0_0, v0x1223950_0, v0x1223b80_0, v0x1223c60_0;
+    %cassign/v v0x1223a20_0, 1, 1;
+    %cassign/v v0x1223ad0_0, 1, 1;
+    %cassign/v v0x1223950_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 23 "$display", "input: %b, %b, enable: %b, output: %b, %b", v0x1223a20_0, v0x1223ad0_0, v0x1223950_0, v0x1223b80_0, v0x1223c60_0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "inputBitSet_tb.v";
+    "./inputBitSet.v";
