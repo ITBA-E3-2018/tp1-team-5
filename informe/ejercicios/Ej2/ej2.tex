@@ -1,3 +1,4 @@
+\input{karnaugh.tex}
 \section{Ejercicio 2}
 \subsection{Introducción}
 \newcommand\Tstrut{\rule{0pt}{2.4ex}}
@@ -10,162 +11,134 @@ Se tiene una función dada por:
 A partir de esto se construyó la siguiente tabla de verdad, completando únicamente los máxterminos de aquellos estados en los que la función valía 0, ya que éstos son los que nos serán de utilidad:
 
 \begin{table}[h!]
-    \caption{Tabla de verdad de la función dada.}
-    \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|c|}
-        \hline
-        i   & $d=X_1$ & $c=X_2$ & $b=X_3$ & $a=X_4$ & $f=()$ & $M_i$ \\\hline
-        0   &  0 & 0 & 0 & 0 & 0 & \(X_{1}+X_{2}+X_{3}+X_{4}\) \\ \hline
-        1   &  0 & 0 & 0 & 1 & 0 & \(X_{1}+X_{2}+X_{3}+\overline{X_{4}}\)\Tstrut\\ \hline
-        2   &  0 & 0 & 1 & 0 & 1 & -\\ \hline
-        3   &  0 & 0 & 1 & 1 & 1 & -\\ \hline
-        4   &  0 & 1 & 0 & 0 & 1 & -\\\hline
-        5   &  0 & 1 & 0 & 1 & 0 & \(X_{1}+\overline{X_{2}}+X_{3}+\overline{X_{4}}\)\Tstrut\\ \hline
-        6   &  0 & 1 & 1 & 0 & 1 & -\\ \hline
-        7   &  0 & 1 & 1 & 1 & 0 & \(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut\\ \hline
-        8   &  1 & 0 & 0 & 0 & 0 & \(\overline{X_{1}}+X_{2}+X_{3}+X_{4}\)\Tstrut\\ \hline
-        9   &  1 & 0 & 0 & 1 & 1 & -\\ \hline
-        10  &  1 & 0 & 1 & 0 & 0 & \(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4}\)\Tstrut\\ \hline
-        11  &  1 & 0 & 1 & 1 & 1 & -\\ \hline
-        12  &  1 & 1 & 0 & 0 & 1 & -\\ \hline
-        13  &  1 & 1 & 0 & 1 & 1 & -\\ \hline
-        14  &  1 & 1 & 1 & 0 & 0 & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4}\)\Tstrut\\ \hline
-        15  &  1 & 1 & 1 & 1 & 0 & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut\\ \hline
-        \end{tabular}
-    \end{center}
-    \label{table:2.1}
+	\caption{Tabla de verdad de la función dada.}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			i  & $d=X_1$ & $c=X_2$ & $b=X_3$ & $a=X_4$ & $f=()$ & $M_i$                                                                          \\\hline
+			0  & 0       & 0       & 0       & 0       & 0      & \(X_{1}+X_{2}+X_{3}+X_{4}\)                                                    \\ \hline
+			1  & 0       & 0       & 0       & 1       & 0      & \(X_{1}+X_{2}+X_{3}+\overline{X_{4}}\)\Tstrut                                  \\ \hline
+			2  & 0       & 0       & 1       & 0       & 1      & -                                                                              \\ \hline
+			3  & 0       & 0       & 1       & 1       & 1      & -                                                                              \\ \hline
+			4  & 0       & 1       & 0       & 0       & 1      & -                                                                              \\\hline
+			5  & 0       & 1       & 0       & 1       & 0      & \(X_{1}+\overline{X_{2}}+X_{3}+\overline{X_{4}}\)\Tstrut                       \\ \hline
+			6  & 0       & 1       & 1       & 0       & 1      & -                                                                              \\ \hline
+			7  & 0       & 1       & 1       & 1       & 0      & \(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut            \\ \hline
+			8  & 1       & 0       & 0       & 0       & 0      & \(\overline{X_{1}}+X_{2}+X_{3}+X_{4}\)\Tstrut                                  \\ \hline
+			9  & 1       & 0       & 0       & 1       & 1      & -                                                                              \\ \hline
+			10 & 1       & 0       & 1       & 0       & 0      & \(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4}\)\Tstrut                       \\ \hline
+			11 & 1       & 0       & 1       & 1       & 1      & -                                                                              \\ \hline
+			12 & 1       & 1       & 0       & 0       & 1      & -                                                                              \\ \hline
+			13 & 1       & 1       & 0       & 1       & 1      & -                                                                              \\ \hline
+			14 & 1       & 1       & 1       & 0       & 0      & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4}\)\Tstrut            \\ \hline
+			15 & 1       & 1       & 1       & 1       & 0      & \(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}}\)\Tstrut \\ \hline
+		\end{tabular}
+	\end{center}
+	\label{table:2.1}
 \end{table}
 
 De esta manera, la función está dada por productos de sumas de las variables (máxterminos).
-
-%la tabla \ref{table:2.1}.
 
 \subsection{Simplificación aplicando álgebra booleana}
 
 Se tiene entonces:
 \vspace{5mm}
 \begin{dmath}
-    f(d,c,b,a)=M_{0}*M_{1}*M_{5}*M_{7}*M_{8}*M_{10}*M_{14}*M_{15}
+	f(d,c,b,a)=M_{0}*M_{1}*M_{5}*M_{7}*M_{8}*M_{10}*M_{14}*M_{15}
 \end{dmath}
 Que es equivalente a:
 \begin{dmath}
-    f(d,c,b,a)={(X_{1}+X_{2}+X_{3}+X_{4})}*{(X_{1}+X_{2}+X_{3}+\overline{X_{4}})}*{(X_{1}+\overline{X_{2}}+X_{3}+\overline{X_{4}})}*
-    {(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{3}+X_{4})}*{(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4})}*
-    {(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}
+	f(d,c,b,a)={(X_{1}+X_{2}+X_{3}+X_{4})}*{(X_{1}+X_{2}+X_{3}+\overline{X_{4}})}*{(X_{1}+\overline{X_{2}}+X_{3}+\overline{X_{4}})}*
+	{(X_{1}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{3}+X_{4})}*{(\overline{X_{1}}+X_{2}+\overline{X_{3}}+X_{4})}*
+	{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+X_{4})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}}+\overline{X_{4}})}
 \end{dmath}
 \vspace{5mm}
 Utilizando la propiedad del álgebra booleana \((x+y)(x+\overline{y}=x)\) sobre los pares de términos \((M_{0},M_{1}); (M_{5},M_{7}); \)\linebreak
 \((M_{8},M_{10}); (M_{14},M_{15})\)  se llegó a la siguiente expresión simplificada.
 \vspace{5mm}
 \begin{dmath}
-    f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}})}*{(X_{1}+\overline{X_{2}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{4})}
+	f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(\overline{X_{1}}+\overline{X_{2}}+\overline{X_{3}})}*{(X_{1}+\overline{X_{2}}+\overline{X_{4}})}*{(\overline{X_{1}}+X_{2}+X_{4})}
 \end{dmath}
 \vspace{5mm}
-
 
 
 \subsection{Simplificación aplicando mapas de Karnaugh}
 
 \begin{table}[!htb]
-    \caption{Mapa de Karnaugh de la función dada.}
-    \vspace{5mm} %5mm vertical space
-    \begin{minipage}{.5\linewidth}
-      %\caption{}
-      \begin{tabular}{|c|c|c|c|c|c|c|}
-        \hline
-        \diagbox{\(X_{3}\), \(X_{4}\)}{\(X_{1}\), \(X_{2}\)} & 0   0 & 0  1 & 1   1 & 1   0 \\
-        \hline
-        0& \multirow{ 2}{*}{\(M_{0}\)}  & \multirow{ 2}{*}{\(M_{4}\)} & \multirow{ 2}{*}{\(M_{12}\)} & \multirow{ 2}{*}{\(M_{8}\)}\\
-        0&   &  &  & \\
-        \hline
-        0& \multirow{ 2}{*}{\(M_{1}\)}  & \multirow{ 2}{*}{\(M_{5}\)} & \multirow{ 2}{*}{\(M_{13}\)} & \multirow{ 2}{*}{\(M_{9}\)}\\
-        1& &  &  & \\
-        \hline
-        1& \multirow{ 2}{*}{\(M_{3}\)}  & \multirow{ 2}{*}{\(M_{7}\)} & \multirow{ 2}{*}{\(M_{15}\)} & \multirow{ 2}{*}{\(M_{11}\)}\\
-        1& &  &  & \\
-        \hline
-        1& \multirow{ 2}{*}{\(M_{2}\)}  & \multirow{ 2}{*}{\(M_{6}\)} & \multirow{ 2}{*}{\(M_{14}\)} & \multirow{ 2}{*}{\(M_{10}\)}\\
-        0& &  &  & \\
-        \hline
-    \end{tabular}
-    \end{minipage}%
-    \scalebox{1.9}{$\boldsymbol{\longrightarrow}$}%
-    \begin{minipage}{.5\linewidth}
-      \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|}
-            \hline
-            \diagbox{\(X_{3}\), \(X_{4}\)}{\(X_{1}\), \(X_{2}\)} & 0   0 & 0  1 & 1   1 & 1   0 \\
-            \hline
-            0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0}\\
-            0&   &  &  & \\
-            \hline
-            0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1}\\
-            1& &  &  & \\
-            \hline
-            1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1}\\
-            1& &  &  & \\
-            \hline
-            1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0}\\
-            0& &  &  & \\
-            \hline
-        \end{tabular}
-    \end{minipage} 
+	\caption{Mapa de Karnaugh de la función dada.}
+	\vspace{5mm} %5mm vertical space
+	\begin{minipage}{.45\linewidth}
+		\begin{figure}[H]
+			\begin{center}
+				\begin{Karnaugh}
+					\contingut{
+						$M_0$,$M_4$,$M_8$, $M_{12}$,
+						$M_1$,$M_5$,$M_9$,$M_{13}$,
+						$M_2$,$M_6$,$M_{10}$,$M_{14}$,
+						$M_3$,$M_7$,$M_{11}$,$M_{15}$}
+				\end{Karnaugh}
+				\label{table:mapaKarnaughRaw}
+			\end{center}
+		\end{figure}
+	\end{minipage}%
+	\scalebox{1.9}{$\boldsymbol{\longrightarrow}$}%
+	\begin{minipage}{.45\linewidth}
+		\begin{figure}[H]
+			\begin{center}
+				\begin{Karnaugh}
+					\contingut{
+						0,1,0,1,
+						0,0,1,1,
+						1,1,0,0,
+					1,0,1,0}
+				\end{Karnaugh}
+				\label{table:mapaKarnaughsindibujar}
+			\end{center}
+		\end{figure}
+	\end{minipage} 
 \end{table}
+
 
 Nos es de interés para simplificar aplicando mapas de Karnaugh aquellos máxterminos en los que la función vale 0, agrupándolos de a 8, 4, 2 ó 1, según se pueda e intentando que los grupos sean lo más grande posible. Si tomamos 4 grupos de a 2 verticales, como muestra la tabla 
-
-\begin{table}[!htb]
-    \centering
-    \caption{Mapa de Karnaugh de la función dada.}
-    \vspace{5mm} %5mm vertical space
-        \begin{tabular}{|c|c|c|c|c|c|c|}
-        \hline
-        \diagbox{\(X_{3}\), \(X_{4}\)}{\(X_{1}\), \(X_{2}\)} & 0   0 & 0  1 & 1   1 & 1   0 \\
-        \hline
-        0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0}\\
-        0&   &  &  & \\
-        \hline
-        0& \multirow{ 2}{*}{0}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{1}\\
-        1& &  &  & \\
-        \hline
-        1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{1}\\
-        1& &  &  & \\
-        \hline
-        1& \multirow{ 2}{*}{1}  & \multirow{ 2}{*}{1} & \multirow{ 2}{*}{0} & \multirow{ 2}{*}{0}\\
-        0& &  &  & \\
-        \hline
-    \end{tabular}
-\label{table:2.2circled}
-\begin{tikzpicture}[overlay]
-    \draw[blue] (-3.05,0.5) ellipse (0.35cm and 0.7cm);
-    \draw[blue] (-2.2,-0.35) ellipse (0.35cm and 0.7cm);
-    \draw[blue] (-1.32,-1.15) ellipse (0.35cm and 0.7cm);
-    \draw[blue] (-0.50,0.95) circle (0.35cm and 0.35cm);
-    \draw[blue] (-0.50,-1.60) circle (0.35cm and 0.35cm);
-\end{tikzpicture} 
-\end{table}
+\begin{figure}[H]
+	\caption{Mapa de Karnaugh de la función dada.}
+	\begin{center}
+		\begin{Karnaugh}
+			\contingut{
+				0,1,0,1,
+				0,0,1,1,
+				1,1,0,0,
+			1,0,1,0}
+			\implicant{0}{4}{purple}
+			\implicant{5}{13}{red}
+			\implicant{15}{11}{green}
+			\implicantdaltbaix[3pt]{2}{10}{blue}
+		\end{Karnaugh}
+		\label{table:mapaKarnaughdibujado}
+	\end{center}
+\end{figure}
 
 Aquellos seleccionados de manera unitaria en la última columna se tomaron como un grupo de 2.
 Con ésto en cuenta, se puede notar lo siguiente de cada pareja:
 \begin{itemize}
-    \item En el primer grupo de la primera columna, las variables \(X_1, X_2~y~X_3\) valen 0 y no cambian; sí lo hace \(X_4\).
-    \item En el segundo grupo, en la segunda columna, las variables que no cambian son \(X_1, X_2~y~X_4\); \(X_1\) vale 0, y \(X_1~y~X_2 \) valen 1, de manera contraria, sí cambia \(X_3\).
-    \item En el tercer grupo de ceros, $X_1, X_2~y~X_3$ no cambian y valen 1; notamos que \(X_4\) sí modifica su valor.
-    \item En el cuarto grupo en la última columna, $X_1, X_2~y~X_4$ mantienen su valor; con \(X_1\) valiendo 1, y \(X_2,~X_4\), 0; \(X_3\) sí modifica su valor.
+	\item En el primer grupo de la primera columna, las variables \(X_1, X_2~y~X_3\) valen 0 y no cambian; sí lo hace \(X_4\).
+	\item En el segundo grupo, en la segunda columna, las variables que no cambian son \(X_1, X_2~y~X_4\); \(X_1\) vale 0, y \(X_1~y~X_2 \) valen 1, de manera contraria, sí cambia \(X_3\).
+	\item En el tercer grupo de ceros, $X_1, X_2~y~X_3$ no cambian y valen 1; notamos que \(X_4\) sí modifica su valor.
+	\item En el cuarto grupo en la última columna, $X_1, X_2~y~X_4$ mantienen su valor; con \(X_1\) valiendo 1, y \(X_2,~X_4\), 0; \(X_3\) sí modifica su valor.
 \end{itemize}
 \vspace{5mm}
 \onehalfspacing{Para realizar entonces la simplificación, recordemos que queremos productos de sumas tal que la función sea nula. En el caso del primer grupo, la manera de lograrlo es $X_{1}+X_{2}+X_{3}$, 
-ya que sólo cuando las tres variables valen cero simultáneamente, este término valdrá cero; como $X_4$ cambia su valor no nos es de interés para la expresión.
-De manera análoga para el segundo grupo, podemos lograr que valga cero únicamente con $X_1+\overline{X_2}+\overline{X_4}$. El hecho de negar las variables se debe a que estas valen 1, y se quiere lo contrario.
-Para el tercer grupo, el cero se consigue como $\overline{X_1}+\overline{X_2}+\overline{X_3}$, las tres variables valen 1, por eso se niegan.
-Con el cuarto y último grupo, la nulidad se consigue con $\overline{X_1}+X_2+X_4$.}
+	ya que sólo cuando las tres variables valen cero simultáneamente, este término valdrá cero; como $X_4$ cambia su valor no nos es de interés para la expresión.
+	De manera análoga para el segundo grupo, podemos lograr que valga cero únicamente con $X_1+\overline{X_2}+\overline{X_4}$. El hecho de negar las variables se debe a que estas valen 1, y se quiere lo contrario.
+	Para el tercer grupo, el cero se consigue como $\overline{X_1}+\overline{X_2}+\overline{X_3}$, las tres variables valen 1, por eso se niegan.
+	Con el cuarto y último grupo, la nulidad se consigue con $\overline{X_1}+X_2+X_4$.}
 
 
 \vspace{5mm}
 Si se combinan los términos, terminamos con la siguiente expresión:
 \vspace{5mm}
 \begin{dmath}
-    f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(X_1+\overline{X_2}+\overline{X_4})}*{(\overline{X_1}+\overline{X_2}+\overline{X_3})}*{(\overline{X_1}+X_2+X_4)}
+	f(d,c,b,a)={(X_{1}+X_{2}+X_{3})}*{(X_1+\overline{X_2}+\overline{X_4})}*{(\overline{X_1}+\overline{X_2}+\overline{X_3})}*{(\overline{X_1}+X_2+X_4)}
 \end{dmath}
 \vspace{5mm}
 
@@ -174,12 +147,16 @@ ES fácil ver que la expresión es idéntica a la simplificación con el álgebr
 
 \subsection{Circuito lógico resultante}
 \subsubsection{Utilizando compuertas AND, OR, NOT.}
-Para implementar el circuito lógico, simplemente se tuvo en cuenta la expresión simplificada y se utilizaron compuertas AND, OR, y NOT cuando se requería.
-
-//insertar imagen
+Para implementar el circuito lógico, simplemente se tuvo en cuenta la expresión simplificada y se utilizaron compuertas AND, OR, y NOT cuando se requerían.
+\begin{center}
+	\includegraphics[scale=0.75]{ej2.jpg}
+\end{center}
 
 \subsubsection{Utilizando compuertas NOR.}
 
-En este caso se utilizó la compuerta NOR para crear las compuertas necesarias (AND, OR y NOT).
-De esta manera
+En este caso se utilizó la compuerta universal NOR para crear las compuertas necesarias (AND, OR y NOT).
+De esta manera, se utiliza un número mayor de compuertas, pero universales. El circuito resultante se muestra a continuación:
+\begin{center}
+\includegraphics[scale=0.75]{ej2b.jpg}
+\end{center}
 
