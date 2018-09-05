@@ -1,5 +1,5 @@
-`include "addern.v"
-module addern_tb();
+`include "ALUsuma.v"
+module ALUsuma_tb();
 
 reg Cin;
 reg [3:0]X;
@@ -12,8 +12,8 @@ wire[7:0]C;
 wire Cout1;
 wire Cout2;
 
-addern #(4)adder4(Cin, X[3:0], Y[3:0], S[3:0], Cout1);
-addern #(8)adder8(Cin,A[7:0], B[7:0], C[7:0], Cout2);
+ALUsuma #(4)adder4(Cin, X[3:0], Y[3:0], S[3:0], Cout1);
+ALUsuma #(8)adder8(Cin,A[7:0], B[7:0], C[7:0], Cout2);
 
 initial begin
     //prueba de una suma de 4 bits

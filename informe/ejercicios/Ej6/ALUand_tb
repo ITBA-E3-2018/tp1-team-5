@@ -1,0 +1,53 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x250d690 .scope module, "ALUand_tb" "ALUand_tb" 2 3;
+ .timescale 0 0;
+P_0x2544da8 .param/l "N" 2 4, +C4<011>;
+v0x25528a0_0 .var "x", 3 0;
+v0x2552970_0 .var "y", 3 0;
+v0x2552a20_0 .net "z", 3 0, L_0x2552ad0; 1 drivers
+S_0x250d780 .scope module, "inst1" "ALUand" 2 8, 3 5, S_0x250d690;
+ .timescale 0 0;
+P_0x2543108 .param/l "N" 3 7, +C4<011>;
+L_0x2552ad0 .functor AND 4, v0x25528a0_0, v0x2552970_0, C4<1111>, C4<1111>;
+v0x251eb20_0 .net "input1", 3 0, v0x25528a0_0; 1 drivers
+v0x2552760_0 .net "input2", 3 0, v0x2552970_0; 1 drivers
+v0x2552800_0 .alias "out", 3 0, v0x2552a20_0;
+    .scope S_0x250d690;
+T_0 ;
+    %vpi_call 2 11 "$display", "x\011 y\011 z\011";
+    %vpi_call 2 12 "$monitor", "%b\011 %b\011 %b\011", v0x25528a0_0, v0x2552970_0, v0x2552a20_0;
+    %set/v v0x25528a0_0, 1, 4;
+    %set/v v0x2552970_0, 1, 4;
+    %delay 5, 0;
+    %movi 8, 5, 4;
+    %set/v v0x2552970_0, 8, 4;
+    %delay 5, 0;
+    %movi 8, 10, 4;
+    %set/v v0x2552970_0, 8, 4;
+    %delay 5, 0;
+    %movi 8, 5, 4;
+    %set/v v0x2552970_0, 8, 4;
+    %delay 5, 0;
+    %set/v v0x25528a0_0, 0, 4;
+    %delay 5, 0;
+    %set/v v0x2552970_0, 1, 4;
+    %delay 5, 0;
+    %movi 8, 7, 4;
+    %set/v v0x25528a0_0, 8, 4;
+    %movi 8, 9, 4;
+    %set/v v0x2552970_0, 8, 4;
+    %delay 5, 0;
+    %vpi_call 2 29 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "ALUand_tb.v";
+    "./ALUand.v";

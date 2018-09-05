@@ -15,6 +15,6 @@ module ALUresta(
     input[N:0] input2;
     output[N:0] output1;
     ALUcompA2 inst1(input2,auxInput);
-    addern inst2(Cin, input1, auxInput,output1, Cout);
+    ALUsuma inst2(Cin, input1, auxInput,output1, Cout);
 
 endmodule
