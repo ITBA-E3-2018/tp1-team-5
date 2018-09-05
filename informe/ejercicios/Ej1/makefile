@@ -1,16 +1,21 @@
 CC=gcc
-CFLAGS=-c -Wall
 SOURCES=tp1-ej1.c utils.c
-OBJECTS=$(SOURCES:.cpp=.o)
+OBJECTS=tp1-ej1.o utils.o
 EXECUTABLE=tp1-ej1
 
-all: tp1-ej1
-	tp1-ej1: tp1-ej1.o utils.o
+all: $(EXECUTABLE)
+	$(CC) -o $(EXECUTABLE) $(OBJECTS) -lm
     
-$(EXECUTABLE): $(OBJECTS) 
-    $(CC) $(OBJECTS) -o $(EXECUTABLE)
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) -o  $(EXECUTABLE) $(OBJECTS) -lm
+tp1-ej1.o: tp1-ej1.c utils.h
+	$(CC)  -c tp1-ej1.c -lm
+utils.o: utils.c utils.h
+	$(CC) -c utils.c -lm
 
 .PHONY: clean
 clean:
+	rm *.o
+	
 	
 
