@@ -5,7 +5,9 @@ Se implementó un sumador de dos números de un dígito en formato BCD, expresan
 Para ésto, primero se realizó un análisis sobre la suma BCD, y luego se implementó en un circuito.
 Se tienen entonces dos números en BCD, que son dos dígitos menores a 9 (pues están en formato BCD). Se realiza una suma convenciional en binario. Seguidamente se compara con 9, ya que si la suma es menor a 9, está representado automáticamente en BCD.
 Si la suma es menor a 9, se le debe sumar un offset de 6 para obtener un 1 en el dígito más significativo, y así, el resultado final. 
-
+El offset de 6 se debe a que en binario, se puede representar como máximo el número 15; en BCD, por otro lado, hasta el 9.
+La diferencia entre ambos es de 6, por lo que si queremos que 9+1=10 ($10_{10}=1 0000_{2}$), tenemos que sumarle 
+\subsection{Circuito lógico}
 Con este razonamiento, se realizó la siguiente implementación:
 \begin{figure}[H]
     \begin{center}
