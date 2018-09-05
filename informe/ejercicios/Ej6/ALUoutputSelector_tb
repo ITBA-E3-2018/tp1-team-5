@@ -1,0 +1,179 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x556b8a6b2650 .scope module, "ALUoutputSelector_tb" "ALUoutputSelector_tb" 2 3;
+ .timescale 0 0;
+v0x556b8a6d59c0_0 .var "input1", 3 0;
+v0x556b8a6d5aa0_0 .var "input2", 3 0;
+v0x556b8a6d5bb0_0 .var "input3", 3 0;
+v0x556b8a6d5ca0_0 .var "input4", 3 0;
+v0x556b8a6d5db0_0 .var "input5", 3 0;
+v0x556b8a6d5f10_0 .var "input6", 3 0;
+v0x556b8a6d6020_0 .var "input7", 3 0;
+v0x556b8a6d6130_0 .var "input8", 3 0;
+v0x556b8a6d6240_0 .net "outputN", 3 0, L_0x556b8a6d6880;  1 drivers
+S_0x556b8a6b27d0 .scope module, "out" "ALUoutputSelector" 2 17, 3 3 0, S_0x556b8a6b2650;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /INPUT 4 "input3"
+    .port_info 3 /INPUT 4 "input4"
+    .port_info 4 /INPUT 4 "input5"
+    .port_info 5 /INPUT 4 "input6"
+    .port_info 6 /INPUT 4 "input7"
+    .port_info 7 /INPUT 4 "input8"
+    .port_info 8 /OUTPUT 4 "output1"
+P_0x556b8a6a1d20 .param/l "N" 0 3 14, +C4<00000000000000000000000000000011>;
+v0x556b8a6d4be0_0 .net "aux1", 3 0, L_0x556b8a69bb90;  1 drivers
+v0x556b8a6d4cf0_0 .net "aux2", 3 0, L_0x556b8a665b20;  1 drivers
+v0x556b8a6d4e00_0 .net "aux3", 3 0, L_0x556b8a6d6380;  1 drivers
+v0x556b8a6d4ef0_0 .net "aux4", 3 0, L_0x556b8a6d6430;  1 drivers
+v0x556b8a6d5000_0 .net "aux5", 3 0, L_0x556b8a6d64e0;  1 drivers
+v0x556b8a6d5160_0 .net "aux6", 3 0, L_0x556b8a6d66b0;  1 drivers
+v0x556b8a6d5270_0 .net "input1", 3 0, v0x556b8a6d59c0_0;  1 drivers
+v0x556b8a6d5330_0 .net "input2", 3 0, v0x556b8a6d5aa0_0;  1 drivers
+v0x556b8a6d53d0_0 .net "input3", 3 0, v0x556b8a6d5bb0_0;  1 drivers
+v0x556b8a6d5470_0 .net "input4", 3 0, v0x556b8a6d5ca0_0;  1 drivers
+v0x556b8a6d5510_0 .net "input5", 3 0, v0x556b8a6d5db0_0;  1 drivers
+v0x556b8a6d55b0_0 .net "input6", 3 0, v0x556b8a6d5f10_0;  1 drivers
+v0x556b8a6d5650_0 .net "input7", 3 0, v0x556b8a6d6020_0;  1 drivers
+v0x556b8a6d5720_0 .net "input8", 3 0, v0x556b8a6d6130_0;  1 drivers
+v0x556b8a6d57f0_0 .net "output1", 3 0, L_0x556b8a6d6880;  alias, 1 drivers
+S_0x556b8a6b2ad0 .scope module, "out1" "ALUor" 3 32, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6b2ca0 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a69bb90 .functor OR 4, v0x556b8a6d59c0_0, v0x556b8a6d5aa0_0, C4<0000>, C4<0000>;
+v0x556b8a6b2d90_0 .net "input1", 3 0, v0x556b8a6d59c0_0;  alias, 1 drivers
+v0x556b8a6d24d0_0 .net "input2", 3 0, v0x556b8a6d5aa0_0;  alias, 1 drivers
+v0x556b8a6d25b0_0 .net "out", 3 0, L_0x556b8a69bb90;  alias, 1 drivers
+S_0x556b8a6d26f0 .scope module, "out2" "ALUor" 3 33, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6d28c0 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a665b20 .functor OR 4, v0x556b8a6d5bb0_0, v0x556b8a6d5ca0_0, C4<0000>, C4<0000>;
+v0x556b8a6d29b0_0 .net "input1", 3 0, v0x556b8a6d5bb0_0;  alias, 1 drivers
+v0x556b8a6d2ab0_0 .net "input2", 3 0, v0x556b8a6d5ca0_0;  alias, 1 drivers
+v0x556b8a6d2b90_0 .net "out", 3 0, L_0x556b8a665b20;  alias, 1 drivers
+S_0x556b8a6d2cd0 .scope module, "out3" "ALUor" 3 34, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6d2ed0 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a6d6380 .functor OR 4, v0x556b8a6d5db0_0, v0x556b8a6d5f10_0, C4<0000>, C4<0000>;
+v0x556b8a6d2ff0_0 .net "input1", 3 0, v0x556b8a6d5db0_0;  alias, 1 drivers
+v0x556b8a6d30d0_0 .net "input2", 3 0, v0x556b8a6d5f10_0;  alias, 1 drivers
+v0x556b8a6d31b0_0 .net "out", 3 0, L_0x556b8a6d6380;  alias, 1 drivers
+S_0x556b8a6d3320 .scope module, "out4" "ALUor" 3 35, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6d34f0 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a6d6430 .functor OR 4, v0x556b8a6d6020_0, v0x556b8a6d6130_0, C4<0000>, C4<0000>;
+v0x556b8a6d3610_0 .net "input1", 3 0, v0x556b8a6d6020_0;  alias, 1 drivers
+v0x556b8a6d3710_0 .net "input2", 3 0, v0x556b8a6d6130_0;  alias, 1 drivers
+v0x556b8a6d37f0_0 .net "out", 3 0, L_0x556b8a6d6430;  alias, 1 drivers
+S_0x556b8a6d3960 .scope module, "out6" "ALUor" 3 37, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6d3b80 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a6d64e0 .functor OR 4, L_0x556b8a69bb90, L_0x556b8a665b20, C4<0000>, C4<0000>;
+v0x556b8a6d3c70_0 .net "input1", 3 0, L_0x556b8a69bb90;  alias, 1 drivers
+v0x556b8a6d3d80_0 .net "input2", 3 0, L_0x556b8a665b20;  alias, 1 drivers
+v0x556b8a6d3e50_0 .net "out", 3 0, L_0x556b8a6d64e0;  alias, 1 drivers
+S_0x556b8a6d3fa0 .scope module, "out7" "ALUor" 3 38, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6d4170 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a6d66b0 .functor OR 4, L_0x556b8a6d6380, L_0x556b8a6d6430, C4<0000>, C4<0000>;
+v0x556b8a6d4290_0 .net "input1", 3 0, L_0x556b8a6d6380;  alias, 1 drivers
+v0x556b8a6d43a0_0 .net "input2", 3 0, L_0x556b8a6d6430;  alias, 1 drivers
+v0x556b8a6d4470_0 .net "out", 3 0, L_0x556b8a6d66b0;  alias, 1 drivers
+S_0x556b8a6d45c0 .scope module, "out8" "ALUor" 3 40, 4 5 0, S_0x556b8a6b27d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "input1"
+    .port_info 1 /INPUT 4 "input2"
+    .port_info 2 /OUTPUT 4 "out"
+P_0x556b8a6d4790 .param/l "N" 0 4 7, +C4<00000000000000000000000000000011>;
+L_0x556b8a6d6880 .functor OR 4, L_0x556b8a6d64e0, L_0x556b8a6d66b0, C4<0000>, C4<0000>;
+v0x556b8a6d48b0_0 .net "input1", 3 0, L_0x556b8a6d64e0;  alias, 1 drivers
+v0x556b8a6d49c0_0 .net "input2", 3 0, L_0x556b8a6d66b0;  alias, 1 drivers
+v0x556b8a6d4a90_0 .net "out", 3 0, L_0x556b8a6d6880;  alias, 1 drivers
+    .scope S_0x556b8a6b2650;
+T_0 ;
+    %vpi_call 2 20 "$monitor", "Inputs:\012%b\012%b\012%b\012%b\012%b\012%b\012%b\012%b\012Output: %b", v0x556b8a6d59c0_0, v0x556b8a6d5aa0_0, v0x556b8a6d5bb0_0, v0x556b8a6d5ca0_0, v0x556b8a6d5db0_0, v0x556b8a6d5f10_0, v0x556b8a6d6020_0, v0x556b8a6d6130_0, v0x556b8a6d6240_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d59c0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5aa0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5bb0_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x556b8a6d5ca0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5db0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5f10_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d6020_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d6130_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d59c0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5aa0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5bb0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5ca0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5db0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5f10_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d6020_0, 0, 4;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x556b8a6d6130_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d59c0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5aa0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5bb0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5ca0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5db0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d5f10_0, 0, 4;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x556b8a6d6020_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x556b8a6d6130_0, 0, 4;
+    %delay 10, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "ALUoutputSelector_tb.v";
+    "./ALUoutputSelector.v";
+    "./ALUor.v";
