@@ -1,5 +1,5 @@
 `include "fulladder.v"
-module addern(Cin, X, Y, S, Cout);
+module ALUsuma(Cin, X, Y, S, Cout);
 parameter n=4;
 
 //inputs

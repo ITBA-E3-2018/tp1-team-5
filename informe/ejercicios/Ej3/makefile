@@ -1,5 +1,5 @@
 COMPILER= iverilog
-all: 
+all: ($(wildcard *.v)
 	$(COMPILER) -o decoder_tb decoder_tb.v
 	$(COMPILER) -o mux_tb mux_tb.v
 decoder:
