@@ -14,6 +14,13 @@ all: $(wildcard *.v)
 	$(COMPILER) -o fulladder_tb fulladder_tb.v
 	$(COMPILER) -o inputBitSet_tb inputBitSet_tb.v
 	$(COMPILER) -o inputWordSet_tb inputWordSet_tb.v
+	$(COMPILER) -o ALU_tb ALU_tb.v
+	$(COMPILER) -o inputNOTbitset_tb inputNOTbitset_tb.v
+
+inputNOTbitset_tb: inputNOTbitset_tb.v
+	$(COMPILER) -o inputNOTbitset_tb inputNOTbitset_tb.v
+ALU_tb: ALU_tb.v
+	$(COMPILER) -o ALU_tb ALU_tb.v
 
 ALUarithmeticShiftLeft_tb: ALUarithmeticShiftLeft_tb.v
 	$(COMPILER) -o ALUarithmeticShiftLeft_tb ALUarithmeticShiftLeft_tb.v 

@@ -78,7 +78,7 @@ endgenerate
 ALUxor xorer(memInputs1ForOperations[OPxor], memInputs2ForOperations[OPxor], memOutputs[OPxor]);
 ALUarithmeticShiftLeft shifteador(memInputs1ForOperations[OPshift], memOutputs[OPshift]);
 ALUand ander(memInputs1ForOperations[OPand], memInputs2ForOperations[OPand], memOutputs[OPand]);
-ALUsuma sumador(0, memInputs1ForOperations[OPsuma], memInputs2ForOperations[OPsuma], memOutputs[OPsuma], Cout);
+ALUsuma sumador(1'b0, memInputs1ForOperations[OPsuma], memInputs2ForOperations[OPsuma], memOutputs[OPsuma], Cout);
 ALUnot noter(memInputs1ForOperations[OPnot], memOutputs[OPnot]);
 ALUcompA2 complementadorA2(memInputs1ForOperations[OPcompA2], memOutputs[OPcompA2]);
 ALUor orer(memInputs1ForOperations[OPor], memInputs2ForOperations[OPor], memOutputs[OPor]);
