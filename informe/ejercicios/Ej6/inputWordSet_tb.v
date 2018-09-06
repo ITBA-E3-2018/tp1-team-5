@@ -10,14 +10,14 @@ wire [3:0]wordOut2;
 inputWordSet wordSetter(bitEnable, wordIn1, wordIn2, wordOut1, wordOut2);
 
 initial begin
-assign wordIn1=6;
-assign wordIn2=7;
+assign wordIn1=14;
+assign wordIn2=15;
 assign bitEnable=1;
 #1
 $display("input: %b, %b, enable: %b, output: %b, %b", wordIn1, wordIn2, bitEnable, wordOut1, wordOut2);
 
-assign wordIn1=6;
-assign wordIn2=7;
+assign wordIn1=8;
+assign wordIn2=9;
 assign bitEnable=0;
 #1
 $display("input: %b, %b, enable: %b, output: %b, %b", wordIn1, wordIn2, bitEnable, wordOut1, wordOut2);
